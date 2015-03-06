@@ -1,0 +1,6 @@
+mixin checkbox(options)
+  - var options = options || {type: 'checkbox', wrapperTag: 'label', state: false, tabindex: 'auto', name: '', disabled: false}
+
+  +b(options.wrapperTag).i-checkbox&attributes(attributes)
+    +e('input').real(type= options.type, tabindex= options.tabindex, checked= options.state, name= options.name, disabled= options.disabled)
+    +e.faux

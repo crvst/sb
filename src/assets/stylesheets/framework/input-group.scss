@@ -1,0 +1,40 @@
+$ig: 'input-group';
+
+.#{$ig} {
+  @include clearfix;
+  position: relative;
+
+  &:hover {
+
+    .i-checkbox {
+      @include checkbox-hover;
+    }
+  }
+
+  &_divided {
+
+    .#{$ig}__cell ~ .#{$ig}__cell {
+
+      padding-left: 0.4em;
+    }
+  }
+
+  &__cell {
+
+    &_left {
+      float: left;
+    }
+
+    &_right {
+      float: right;
+    }
+
+    &_rest {
+      overflow: hidden;
+    }
+  }
+
+  &__caption {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,23 @@
+mixin input(type, tag)
+  - var str = '';
+  - var type = type || '';
+  - var arrType = type.split(' ');
+  - var arrTypeSize = arrType.length;
+  - var tag = tag || 'input';
+  - var mod = 'i-input';
+
+  - function isType(typeCheck) {
+  -   for (var i = 0; i < arrType.length; i++) {
+  -     if (typeof arrType[i] === 'string' && arrType[i] === typeCheck) {
+  -       return true;
+  -     }
+  -   }
+  - }
+
+  - for (var i = 0; i < arrTypeSize; i++) {
+  -  str += mod + '_' + arrType[i] + ' ';
+  - }
+  - var modifiers = str.trim();
+
+  +b(tag).i-input(class= (type === '') ? '' : modifiers)&attributes(attributes)
+    block

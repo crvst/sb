@@ -1,0 +1,42 @@
+$ic: 'i-icon-control';
+
+.#{$ic} {
+  @include transition;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  color: $color-text-complementary;
+
+  &:hover {
+    color: $color-gray-dark;
+  }
+
+  &_hidden {
+
+    .#{$ic}__icon {
+      opacity: 0;
+    }
+  }
+
+  &__icon {
+    @include transition(all);
+    display: inline-block;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+  }
+
+  &__input:checked +  &__icon {
+    color: $color-orange;
+    opacity: 1 ;
+  }
+}

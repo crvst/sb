@@ -1,0 +1,12 @@
+mixin context-box-list-item(content, aside, disabled, name)
+  - var disabled = disabled || false
+
+  +e.item(class= disabled ? 'i-context-box-list__item_disabled' : '')
+    +e('label').control
+      +e.checkbox
+        +checkbox({wrapperTag: 'span', type: 'radio', name: name, disabled: disabled})
+      +e.control-content
+        each val, i in content
+          +e.line(class= (i > 0 ? 'i-context-box-list__line_complementary' : ''))= val
+      if (aside)
+        +e.control-content_aside= aside

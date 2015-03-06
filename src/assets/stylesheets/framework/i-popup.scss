@@ -1,0 +1,52 @@
+.i-popup {
+  padding: $padding-modal;
+  border-radius: $border-radius-base;
+  background: $color-bg;
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.50);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+
+  // Overlay
+  &:before {
+    @include overlay;
+    background: $color-bg;
+  }
+
+  // Spinner
+  &:after {
+    @include spinner;
+    margin: -16px 0 0 -16px;
+  }
+
+  //
+  // Modifiers
+  // --------------------------------------------------
+  &_processing {
+    @include enable-overlay-spinner;
+  }
+
+  //
+  // Blocks
+  // --------------------------------------------------
+  &__main {
+
+  }
+
+  &__line {
+    @include clearfix;
+  }
+
+  &__cell {
+    float: left;
+
+    & + & {
+      padding-left: $gutter-small;
+    }
+  }
+
+  &__footer {
+    padding: $gutter-small 0 0;
+  }
+}

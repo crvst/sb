@@ -1,0 +1,67 @@
+$checkbox: i-checkbox;
+
+.#{$checkbox} {
+  @extend %icon;
+  @include square(18px);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__real {
+    margin: 0;
+    border: 0;
+    background: none;
+    padding: 0;
+    outline: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .ie-legacy & {
+      display: inline;
+    }
+  }
+
+  &:hover {
+    @include checkbox-hover;
+  }
+
+  // Checked state
+  &__real:checked + .#{$checkbox}__faux {
+    background-color: $color-white !important;
+  }
+
+  &__real:checked + .#{$checkbox}__faux:before {
+    opacity: 1;
+  }
+
+  // Focused state
+  &__real:focus + .#{$checkbox}__faux {
+    border-color: $color-gray;
+    background-color: $color-bg;
+  }
+
+  // Fake checkbox
+  &__faux {
+    @include square(16px);
+    @include transition(border-color);
+    background: $color-bg;
+    border: 1px solid $color-divider;
+    border-radius: $border-radius-base;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+
+    &:before {
+      @include transition(opacity);
+      @extend %icon_tip;
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      opacity: 0;
+      color: $color-text;
+    }
+  }
+}

@@ -1,0 +1,413 @@
+@mixin dib($valign: baseline) {
+  display: inline-block;
+  vertical-align: $valign;
+}
+
+@mixin checkbox-hover {
+
+  .i-checkbox__faux {
+    border-color: $color-gray;
+    background-color: $color-bg;
+    z-index: 3;
+  }
+}
+
+@mixin table {
+  width: 100%;
+  max-width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+@mixin disabled {
+  &:disabled,
+  &[disabled],
+  &[disabled=disabled]
+  &[disabled=true] {
+    cursor: default !important;
+    cursor: not-allowed !important;
+    @content;
+  }
+}
+
+@mixin input-common($border-radius: $border-radius-base) {
+  @if ($border-radius > 0) {
+    border-radius: $border-radius;
+  }
+  box-sizing: border-box;
+  outline: none;
+  position: relative;
+  line-height: 1;
+}
+
+@mixin cursor-not-allowed {
+  cursor: default;
+  cursor: not-allowed;
+}
+
+@mixin layout {
+  min-width: $width-layout-min;
+  max-width: $width-layout-max;
+  margin: auto;
+  text-align: left;
+}
+
+@mixin input-placeholder {
+  ::-webkit-input-placeholder {
+    @content
+  }
+  :-moz-placeholder {
+    @content
+  }
+  ::-moz-placeholder {
+    @content
+  }
+  :-ms-input-placeholder {
+    @content
+  }
+}
+
+@mixin dib-fix {
+  margin-right: -0.26667em;
+}
+
+@mixin table-reset {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  td {
+    empty-cells: show
+  }
+}
+
+@mixin float-right-fixed {
+  margin-left: -100%;
+  float: right;
+}
+
+@mixin border-radius($radius: 3px) {
+  border-radius: $radius;
+}
+
+@mixin input-padding {
+  padding: 8px 20px;
+}
+
+@mixin header-reset {
+  margin: 0;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+@mixin padding-x($padding) {
+  padding-right: $padding;
+  padding-left: $padding;
+}
+
+@mixin padding-y($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+@mixin transition($parameter: color, $time: 0.2s) {
+  transition: $parameter $time ease;
+}
+
+@mixin fs($size) {
+  font-size: $size;
+  line-height: $line-height-base * $size;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else if $value == off {
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+%antialiased {
+  @include font-smoothing;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fixed($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin list-reset($override: false) {
+  @if not $override {
+    margin: 0;
+    padding: 0;
+  }
+  list-style: none;
+  display: block;
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin selection($background: #ffcc89, $color: #222) {
+  ::-moz-selection {
+    background: $background;
+    color: $color;
+    text-shadow: none;
+  }
+  ::selection {
+    background: $background;
+    color: $color;
+    text-shadow: none;
+  }
+}
+
+@mixin placeholder {
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
+  }
+}
+
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin retina {
+  @media screen
+and(min--moz-device-pixel-ratio:1.3),
+(-o-min-device-pixel-ratio:2.6 / 2),
+(-webkit-min-device-pixel-ratio:1.3),
+(min-device-pixel-ratio:1.3),
+(min-resolution:1.3 dppx) {
+  @content;
+}
+}
+
+@mixin screen($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin max-screen($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+
+@mixin min-screen($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media only screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media only screen and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include screen(0, 767px) {
+    @content
+  }
+}
+
+@mixin mobile-tablet {
+  @include screen(0, 1024px) {
+    @content
+  }
+}
+
+@mixin tablet {
+  @include screen(768px, 1024px) {
+    @content
+  }
+}
+
+@mixin desktop-small {
+  @include screen(0, 1199px) {
+    @content
+  }
+}
+
+@mixin desktop-medium {
+  @include screen(1200px, 1599px) {
+    @content
+  }
+}
+
+@mixin desktop-large {
+  @include min-screen(1600px) {
+    @content
+  }
+}
+
+@mixin desktop-branding-small {
+  @include screen(0, 1599px) {
+    @content
+  }
+}
+
+@mixin desktop-branding-medium {
+  @include screen(1600px, 1919px) {
+    @content
+  }
+}
+
+@mixin desktop-branding-large {
+  @include min-screen(1920px) {
+    @content
+  }
+}
+
+@mixin responsive-base {
+  @include transition(width);
+
+  // Small < 1200
+  // -------------------------
+  @include desktop-small {
+    width: $width-layout-small;
+  }
+
+  // Medium 1200...1599
+  // -------------------------
+  @include desktop-medium {
+    width: $width-layout-medium;
+  }
+
+  // Large >= 1600
+  // -------------------------
+  @include desktop-large {
+    width: 1400px;
+  }
+}
+
+@mixin responsive-branding {
+  @include desktop-branding-small {
+    width: $width-layout-small;
+  }
+
+  @include desktop-branding-medium {
+    width: $width-layout-medium;
+  }
+
+  @include desktop-branding-large {
+    width: $width-layout-large;
+  }
+}
+
+@mixin overlay {
+  @include absolute(1px, 0, 0, 0);
+  @include transition(all, 0.5s);
+  content: '';
+  background: $color-bg;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin spinner {
+  @extend %spinner;
+  @include transition(all, 0.3s);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin enable-overlay-spinner {
+  pointer-events: none;
+
+  &:before {
+    visibility: visible;
+    opacity: 0.95;
+  }
+
+  &:after {
+    visibility: visible;
+    opacity: 1;
+  }
+}

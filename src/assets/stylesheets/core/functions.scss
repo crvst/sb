@@ -1,0 +1,19 @@
+@function invert-values($list) {
+
+  $inverted: '';
+  @each $value in $list {
+    $inverted: $inverted + #{' '} + #{-$value};
+  }
+
+  @return unquote($inverted);
+}
+
+@function extend-values($list, $item) {
+
+  $extended: '';
+  @each $value in $list {
+    $extended: $extended + #{' '} + #{$value + $item};
+  }
+
+  @return unquote($extended);
+}

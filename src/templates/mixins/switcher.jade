@@ -1,0 +1,13 @@
+mixin switcher (arr, name, type)
+  - var type = type || 'radio';
+
+  +b.i-switcher&attributes(attributes)
+    +e('ul').list
+      each val, index in arr
+        +e.item
+          +e('label').label
+            if index === 0
+              +e('input').input(type=type, name= name, checked)
+            else
+              +e('input').input(type=type, name= name)
+            +e.name= val

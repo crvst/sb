@@ -1,0 +1,9 @@
+mixin dropdown(init, items, mod)
+  +b.dropdown&attributes(attributes)
+    +e.init(href='#')= init
+      +icon('arrow-down').dropdown__icon
+    +b('div').dropdown-menu(role='menu')
+      +e('ul').list
+        each val in items
+          +e.item
+            +e.link(href='#')= val

@@ -1,0 +1,5 @@
+mixin icon-control(checked, hidden)
+  +b('label').i-icon-control(class=hidden ? 'i-icon-control_hidden' : '')
+    +e('input').input(type='checkbox', checked= checked ? true : false)
+    +e.icon
+      +icon('star')

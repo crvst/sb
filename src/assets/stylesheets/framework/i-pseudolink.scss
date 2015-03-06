@@ -1,0 +1,9 @@
+.i-pseudolink {
+  border-bottom: 1px dotted;
+  color: $color-text-complementary;
+
+  &:hover,
+  &:focus {
+    color: $color-gray-dark;
+  }
+}

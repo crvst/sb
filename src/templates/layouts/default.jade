@@ -1,0 +1,22 @@
+doctype html
+include ../vendor/bemto
+include ../mixins/mixins
+
+block vars
+- var rootClasses = rootClasses || '';
+- var TITLE = ''
+- var DESCRIPTION = ''
+
+html(lang='ru', class=rootClasses)
+  head
+    script(src='/bower_components/react/react-with-addons.js')
+    block head
+      include ../partials/head
+
+  body
+    block content
+
+    block overlay
+
+    block scripts
+      script(src='assets/scripts/app.js')

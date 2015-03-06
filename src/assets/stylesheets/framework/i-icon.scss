@@ -1,0 +1,87 @@
+@font-face {
+  src:url('../fonts/oz-icons.eot?-tng0ff');
+  src:url('../fonts/oz-icons.eot?#iefix-tng0ff') format('embedded-opentype'),
+    url('../fonts/oz-icons.woff?-tng0ff') format('woff'),
+    url('../fonts/oz-icons.ttf?-tng0ff') format('truetype'),
+    url('../fonts/oz-icons.svg?-tng0ff#icomoon') format('svg');
+  font-family: 'OZ Icons';
+  font-weight: normal;
+  font-style: normal;
+}
+
+.i-icon, %icon {
+  speak: none;
+  font: normal normal 32px/1 'OZ Icons';
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-icon_64 {
+  font-size: 64px;
+}
+
+.i-icon_fb:before {
+  content: "\e600";
+}
+
+.i-icon_g:before {
+  content: "\e601";
+}
+
+.i-icon_ok:before {
+  content: "\e602";
+}
+
+.i-icon_oz:before {
+  content: "\e603";
+}
+
+.i-icon_tut:before {
+  content: "\e604";
+}
+
+.i-icon_vk:before {
+  content: "\e605";
+}
+
+.i-icon_cart:before {
+  content: "\e606";
+}
+
+.i-icon_tip:before, %icon_tip:before {
+  content: "\e607";
+}
+
+.i-icon_close-nano:before {
+  content: "\e608";
+}
+
+.i-icon_close:before {
+  content: "\e609";
+}
+
+.i-icon_enter:before {
+  content: "\e60a";
+}
+
+.i-icon_favs:before {
+  content: "\e60b";
+}
+
+.i-icon_search-nano:before {
+  content: "\e60c";
+}
+
+.i-icon_search:before {
+  content: "\e60d";
+}
+
+.i-icon_star:before {
+  content: "\e60e";
+}
+
+.i-icon_user:before {
+  content: "\e60f";
+}
+

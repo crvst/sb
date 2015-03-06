@@ -1,0 +1,12 @@
+.i-tag {
+  padding: 0.2em 0.4em;
+  margin: -0.2em 0;
+  border-radius: $border-radius-base;
+  display: inline-block;
+  line-height: inherit;
+
+  &_accent {
+    background: $color-orange-lightest;
+    color: $color-text-accent;
+  }
+}

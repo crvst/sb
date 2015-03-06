@@ -1,0 +1,40 @@
+body, html {
+  font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navigation {
+  list-style: none;
+}
+
+.navigation__item {
+  float: left;
+  position: relative;
+  color: #262626;
+}
+
+.navigation__item a {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 8px 10px;
+}
+
+.navigation__dropdown {
+  display: none;
+  background: #F7F7F7;
+  border: 1px solid rgba( 0, 0, 0, 0.1 );
+  position: absolute;
+  width: 150px;
+  top: 25px;
+  margin: 0;
+  padding: 0;
+  border-radius: 3px;
+}
+
+.navigation__dropdown--open {
+  display: block;
+}
+
+.navigation__dropdown__item {
+  list-style: none;
+  padding: 5px 7px;
+}

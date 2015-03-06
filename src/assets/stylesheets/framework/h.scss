@@ -1,0 +1,15 @@
+.i-h, %h {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.i-h_2, %i-h_2 {
+  @extend %h;
+  font-size: $font-size-x-large;
+}
+
+.i-h_3, %i-h_3 {
+  @extend %h;
+  font-size: $font-size-x-large;
+}

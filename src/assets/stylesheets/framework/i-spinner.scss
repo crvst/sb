@@ -1,0 +1,6 @@
+.i-spinner, %spinner {
+  @include animation-spin;
+  @include square(32px);
+  display: block;
+  background: url(../images/spinner.png) 0 0 no-repeat;
+}

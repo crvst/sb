@@ -1,0 +1,27 @@
+html {
+  font-family: $family-base;
+  background: $color-bg;
+}
+
+a {
+  @include transition;
+  text-decoration: none;
+  color: $color-link;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+  &:active {
+    outline: none !important;
+  }
+
+  &:focus {
+    outline-width: 1px;
+    color: $color-link-hover;
+  }
+}
+
+img {
+  vertical-align: top;
+}

@@ -1,0 +1,151 @@
+//
+// Colors
+// --------------------------------------------------
+// Base
+$color-white: #fff;
+
+$color-black: #000;
+$color-black-10: rgba($color-black, 0.1);
+
+// Average color of universe
+$color-cosmic-latte: #fff8e7;
+
+// Grays
+$color-gray-darkest: #333;
+$color-gray-dark: #666;
+$color-gray: #999;
+$color-gray-light: #ccc;
+
+// Orange
+$color-orange: #cd4500;
+$color-orange-light: #faece5;
+$color-orange-lightest: #ffefba;
+
+// Text
+// -------------------------
+$color-text: $color-gray-darkest;
+$color-text-gray: $color-gray;
+
+$color-text-complementary: $color-gray;
+$color-text-disabled: $color-gray-light;
+
+$color-text-accent: $color-orange;
+
+// Background
+// -------------------------
+$color-bg: $color-cosmic-latte;
+$color-bg-tab: #eee;
+$color-bg-gray: #f2f2f2;
+$color-bg-popover: rgba($color-gray-darkest, 0.88);
+$color-bg-overlay: rgba(#e5e5e5, 0.85);
+
+// Dividers, borders
+// -------------------------
+$color-divider: #e5e5e5;
+
+// Links
+// -------------------------
+$color-link: #039;
+$color-link-hover: #0063f7;
+
+$color-link-gray: $color-text-gray;
+$color-link-gray-hover: #666;
+
+$color-link-orange: $color-orange;
+$color-link-orange-hover: #e56000;
+
+// Controls
+// -------------------------
+// Button
+
+$color-button: (
+  // 'color': default hover active text-color
+        'primary': #7a0 #6a9e00 #508800 $color-white,
+        'gray': #dedede $color-gray-light #c0c0c0 $color-text
+);
+
+//
+// Gutters
+// --------------------------------------------------
+$gutter-x-small: 5px;
+$gutter-small: 10px;
+$gutter-default: 20px;
+$gutter-large: 40px;
+$gutter-x-large: 80px;
+
+//
+// Typography
+// --------------------------------------------------
+$family-sans: Arial, Helvetica Neue, Helvetica, sans-serif;
+$family-base: $family-sans;
+
+// Font sizes
+// -------------------------
+$font-size-base: 13px;
+
+$font-size-small: 11px;
+$font-size-medium: $font-size-base;
+$font-size-large: 15px;
+$font-size-x-large: 21px;
+$font-size-xx-large: 35px;
+
+// Headers
+$font-size-h2: 30px;
+$font-size-h3: 21px;
+
+// Icons
+$font-size-icon-base: 32px;
+$font-size-icon-small: $font-size-icon-base*0.5;
+$font-size-icon-large: $font-size-icon-base*2;
+
+// Line heights
+// -------------------------
+$line-height-base: 1.4;
+$line-height-large: 1.5;
+$line-height-x-large: 36px / $font-size-h2;
+
+$line-height-h2: $line-height-large;
+$line-height-h3: 23px / $font-size-h3;
+
+//
+// Layout
+// --------------------------------------------------
+$width-layout-min: 1000px;
+$width-layout-max: 1400px;
+
+$width-layout-small: $width-layout-min;
+$width-layout-medium: 1200px;
+$width-layout-large: $width-layout-max;
+
+$width-column-fixed: 320px;
+
+//
+// Border radius
+// --------------------------------------------------
+$border-radius-base: 3px;
+
+$border-radius-x-small: 2px;
+$border-radius-small: $border-radius-base;
+$border-radius-large: 3px;
+$border-radius-x-large: 5px;
+
+//
+// Paddings
+// --------------------------------------------------
+
+$padding-input-small: $gutter-x-small $gutter-small ($gutter-x-small + 1);
+$padding-input-base: 11px 15px 13px;
+$padding-input-large: $padding-input-base;
+$padding-input-large-reduced: $gutter-small $gutter-x-small 12px;
+
+$padding-button-base: 11px 15px 13px;
+
+$padding-modal: $gutter-small 15px;
+
+$padding-content-box-item: 11px 140px 12px $gutter-large;
+
+//
+// Sizes
+// --------------------------------------------------
+$height-footer-compact: 51px;
+$height-context-box-footer: $gutter-x-large;

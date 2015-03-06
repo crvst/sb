@@ -1,0 +1,53 @@
+$sw: 'i-switcher';
+
+.#{$sw} {
+  @include clearfix;
+  color: $color-text-complementary;
+
+  &__list {
+    @include clearfix;
+    @include list-reset;
+  }
+
+  &__item {
+    float: left;
+    position: relative;
+
+    &:hover {
+
+      .#{$sw}__name {
+        color: $color-gray-dark;
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    cursor: pointer;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+
+    &:checked + .#{$sw}__name {
+      background-color: $color-bg-tab;
+      z-index: 2;
+      color: $color-text;
+    }
+
+    &:focus + .#{$sw}__name {
+      color: $color-gray-dark;
+    }
+  }
+
+  &__name {
+    @include input-common(0);
+    @include transition(all);
+    padding: $padding-input-large;
+    display: block;
+    border-radius: $border-radius-large;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}

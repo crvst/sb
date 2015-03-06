@@ -1,0 +1,83 @@
+$i: 'i-input';
+
+.#{$i} {
+  @include transition(all);
+  @include placeholder {
+    color: $color-gray;
+  }
+  @extend %antialiased;
+  margin: 0;
+  padding: $padding-input-base;
+  border: 1px solid $color-gray-light;
+  border-radius: $border-radius-base;
+  background: none;
+  outline: none;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  font-size: $font-size-base;
+  font-family: $family-base;
+  -webkit-appearance: none;
+
+  &:hover {
+    border-color: $color-gray;
+    z-index: 3;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $color-gray-dark;
+    z-index: 4;
+  }
+
+  //
+  // Modifiers
+  // --------------------------------------------------
+
+  // Sizes
+  // -------------------------
+
+
+  // Large
+  &_large {
+    padding: $padding-input-large;
+    font-size: $font-size-large;
+  }
+
+  //Error
+  &_error,
+  &:invalid {
+    @include placeholder {
+      color: $color-orange;
+    }
+    border-color: $color-orange;
+    background: $color-orange-light;
+    z-index: 3;
+  }
+
+  // Misc.
+  // -------------------------
+  &_full-width {
+    width: 100%;
+  }
+
+  &_no-border {
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: transparent;
+    }
+  }
+
+  &_no-border-radius {
+    border-radius: 0;
+  }
+
+  &_value {
+    width: 40px;
+    padding: 2px 2px 1px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,43 @@
+.i-popover {
+  @include transition(all);
+  padding: $padding-modal;
+  background: $color-bg-popover;
+  border-radius: $border-radius-base;
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  color: $color-white;
+
+  //
+  // Modifiers
+  // --------------------------------------------------
+  &_visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  //
+  // Blocks
+  // --------------------------------------------------
+  &__footer {
+    padding: $gutter-small 0 0;
+  }
+
+  &__tail {
+    width: 9px;
+    height: 12px;
+    position: absolute;
+    overflow: hidden;
+
+    &:before {
+      @include square(8px);
+      margin: 3px 0 0 -4px;
+      content: '';
+      border-radius: $border-radius-x-small;
+      background: $color-bg-popover;
+      display: block;
+      transform: rotate(45deg);
+    }
+  }
+}
